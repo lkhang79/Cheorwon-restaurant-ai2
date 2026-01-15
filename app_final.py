@@ -225,16 +225,14 @@ class Recommender:
 # 🎨 메인 앱 (UI)
 # ============================================================================
 def main():
-    st.set_page_config(page_title="철원 AI 맛집", page_icon="🍚", layout="wide")
-    
-    # [수정됨] st.markdown(""" ... """) 안에 CSS가 정확히 들어가야 합니다.
+    # [수정됨] 사이드바 너비 515px -> 385px로 축소
     st.markdown("""
         <style>
-        /* 1. PC 화면 (너비 992px 이상)에서만 사이드바 넓게 고정 */
+        /* 1. PC 화면 (너비 992px 이상)에서만 사이드바 너비 고정 */
         @media (min-width: 992px) {
             [data-testid="stSidebar"] {
-                min-width: 515px;
-                max-width: 515px;
+                min-width: 385px;
+                max-width: 385px;
             }
         }
         
@@ -285,10 +283,9 @@ def main():
         </style>
     """, unsafe_allow_html=True)
     
-    
     st.title("🍚 철원지역 음식점 찾기(AI)")
     
-    # --- Sidebar ---
+    
 # --- Sidebar ---
     with st.sidebar:
         st.header("⚙️ 검색 조건")
